@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main id="main">
+        <header id="header">
+            <h1>Temperature Conversion</h1>
+        </header>
+        <article id="container">
+            <div class="values">
+                <input type="number" id="firstInput">
+                <p id="firstSymbol"></p>
+                <select id="firstSelect">
+                    <option value="CEL">Celsius</option> <!-- BRL -->
+                    <option value="FAH">Fahrenheit</option> <!-- USD -->
+                    <option value="KEL">Kelvin</option> <!-- EUR -->
+                </select>
+            </div>
+
+            <div class="values">
+                <input type="number" id="secondInput">
+                <p id="secondSymbol"></p>
+                <select id="secondSelect">
+                    <option value="FAH">Fahrenheit</option>
+                    <option value="KEL">Kelvin</option>
+                    <option value="CEL">Celsius</option>
+                </select>
+            </div>
+
+            <script src="script.js"></script>
+        </article>
+    </main>
+</body>
+
+</html>
