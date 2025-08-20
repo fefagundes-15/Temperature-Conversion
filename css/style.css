@@ -46,8 +46,16 @@ body {
     display: flex;
     margin: 0.7em 0;
     justify-content: space-between;
-    gap: 0.8em;
+    gap: 0px;
     align-items: center;
+}
+
+input[type="number"]+p {
+    margin-left: 0.5em;
+}
+
+p+select {
+    margin-left: 2em;
 }
 
 input,

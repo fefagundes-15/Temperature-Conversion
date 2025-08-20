@@ -11,21 +11,46 @@ document.addEventListener("DOMContentLoaded", function () {
         secondInput.value = '';
     }
 
+    // Atualizar símbolos imediatamente após o carregamento da página
+    updateSymbol(firstSelect, firstSymbol);
+    updateSymbol(secondSelect, secondSymbol);
+
     // Adicionar event listeners para limpar inputs ao mudar seleção
-    firstSelect.addEventListener("change", clearInputs);
-    secondSelect.addEventListener("change", clearInputs);
+    firstSelect.addEventListener("change", function () {
+        clearInputs();
+        updateSymbol(firstSelect, firstSymbol);  // Atualiza o símbolo quando o selection muda
+    });
+
+    // Adicionar event listeners para limpar inputs ao mudar seleção
+    secondSelect.addEventListener("change", function () {
+        clearInputs();
+        updateSymbol(secondSelect, secondSymbol);  // Atualiza o símbolo quando o selection muda
+    });
+
+    // Função para atualizar o símbolo de temperatura
+    function updateSymbol(select, symbol) {
+        switch (select.value) {
+            case "CEL":
+                symbol.textContent = "ºC";
+                break;
+            case "FAH":
+                symbol.textContent = "ºF";
+                break;
+            case "KEL":
+                symbol.textContent = "K";
+                break;
+            default:
+                symbol.textContent = "";  // Um fallback em caso de seleção inválida
+                break;
+        }
+    }
+
 
     // Função para converter moedas
     function convertTemperature(inputValue, fromTemperature, toTemperature) {
         if (isNaN(inputValue) || inputValue === '') {
             return '';
         }
-
-        // if (inputValue <= 0) {
-        //     firstInput.value = 0;
-        //     secondInput.value = 0;
-        //     return '';
-        // }
 
         switch (fromTemperature) {
             case "CEL":
