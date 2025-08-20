@@ -10,7 +10,6 @@
 
 header {
     margin-bottom: 2em;
-    /* Diminuindo espaçamento para foco na funcionalidade */
     text-align: center;
 }
 
@@ -20,7 +19,6 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 2.2em;
-    /* Tamanho maior para destaque elegante */
 }
 
 body {
@@ -40,6 +38,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     max-width: 30em;
+    width: 100%;
+    margin: 0 20px;
 }
 
 .values {
@@ -84,4 +84,61 @@ select {
 
 .fade-in {
     opacity: 1;
+}
+
+/* Apenas ajustes para telas menores mantendo o layout original */
+@media (max-width: 600px) {
+    #main {
+        padding: 2em;
+        margin: 0 15px;
+    }
+
+    h1 {
+        font-size: 1.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    #main {
+        padding: 1.8em;
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    input,
+    select {
+        padding: 0.45em;
+        font-size: 0.95em;
+    }
+
+    p+select {
+        margin-left: 1.5em;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #main {
+        padding: 1.5em;
+    }
+
+    input,
+    select {
+        padding: 0.4em;
+        font-size: 0.9em;
+    }
+
+    p+select {
+        margin-left: 1em;
+    }
+
+    input[type="number"]+p {
+        margin-left: 0.4em;
+    }
 }
